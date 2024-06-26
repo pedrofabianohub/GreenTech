@@ -48,7 +48,7 @@ const apiBaseUrl = 'https://assistentegreentech.netlify.app/.netlify/functions/b
 
 async function sendMessageToServer(message) {
   try {
-    const response = await fetch(`${apiBaseUrl}`, {
+    const response = await fetch(apiBaseUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -63,6 +63,6 @@ async function sendMessageToServer(message) {
     const data = await response.json();
     return data.resposta;
   } catch (error) {
-    throw error; // Propaga o erro para ser tratado no .catch()
+    throw new Error(`Erro ao enviar mensagem para o servidor: ${error.message}`);
   }
 }
