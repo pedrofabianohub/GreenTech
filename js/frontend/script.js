@@ -44,7 +44,7 @@ function displayMessage(message, sender) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-const apiBaseUrl = 'https://assistentegreentech.netlify.app/.netlify/functions/backend/'; //ajuste o endereço caso seja necessário
+const apiBaseUrl = 'https://assistentegreentech.netlify.app/.netlify/functions/backend/mensagem'; //ajuste o endereço caso seja necessário
 
 async function sendMessageToServer(message) {
   try {
