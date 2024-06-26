@@ -3,9 +3,9 @@ const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const app = express();
-app.use(cors()); // Permite todas as origens (*)
 
-// Definição da lógica da aplicação
+// Configuração do CORS
+app.use(cors());
 
 // Exemplo de rota para processar mensagens
 app.post('/mensagem', async (req, res) => {
