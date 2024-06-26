@@ -3,34 +3,16 @@ const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const app = express();
-app.use(cors({ origin: '*' })); // Permite todas as origens
-app.use(express.json());
+app.use(cors()); // Permite todas as origens (*)
 
-const apiKey = 'AIzaSyCUSwm5rHE-ut59qGlw437xYn6idrnxId0';
-const genAI = new GoogleGenerativeAI(apiKey);
+// Definição da lógica da aplicação
 
-const model = genAI.getGenerativeModel({
-  model: "gemini-1.5-pro",
-  systemInstruction: "Aja como um assistente para um agricultor. Utilize palavras simples, e se possivel, desenhe com caracteres algumas coisas (não sempre). o assistente deve ser intuitivo e acessivel. Utilize o nome GreenTech como nome do assistente.",
-});
-
-const generationConfig = {
-  temperature: 0.7,
-  topP: 0.95,
-  topK: 64,
-  maxOutputTokens: 8192,
-  responseMimeType: "text/plain",
-};
-
-const chatSession = model.startChat({
-  generationConfig,
-  history: [],
-});
-
+// Exemplo de rota para processar mensagens
 app.post('/mensagem', async (req, res) => {
   const mensagemUsuario = req.body.mensagem;
 
   try {
+    // Lógica para processar a mensagem e enviar resposta
     const respostaGemini = await chatSession.sendMessage(mensagemUsuario);
     res.json({ resposta: respostaGemini.response.text() });
   } catch (erro) {
