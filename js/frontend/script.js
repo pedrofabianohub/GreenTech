@@ -44,7 +44,7 @@ function displayMessage(message, sender) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-const apiBaseUrl = 'http://localhost:8000/mensagem'; //ajuste o endereço caso seja necessário
+const apiBaseUrl = 'https://seusite.netlify.app/.netlify/functions/backend/mensagem'; //ajuste o endereço caso seja necessário
 
 async function sendMessageToServer(message) {
   try {
