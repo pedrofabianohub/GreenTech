@@ -3,7 +3,7 @@ const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' })); // Permite todas as origens
 app.use(express.json());
 
 const apiKey = 'AIzaSyCUSwm5rHE-ut59qGlw437xYn6idrnxId0';
