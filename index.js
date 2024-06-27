@@ -30,7 +30,6 @@ const generationConfig = {
 };
 
 const corsOptions = {
-  origin: 'https://inspiring-fox-cbc878.netlify.app', // Substitua pelo URL do seu frontend
   optionsSuccessStatus: 200,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   preflightContinue: false,
@@ -39,7 +38,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.options('*', cors(corsOptions)); // Handle preflight requests
+// Middleware para lidar com requisições OPTIONS
+app.options('*', cors(corsOptions));
 
 app.get('/', (req, res) => {
   res.json('hello world');
