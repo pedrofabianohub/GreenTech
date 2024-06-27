@@ -3,11 +3,11 @@ const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const app = express();
-
-// Configuração do CORS
 app.use(cors());
 
-// Exemplo de rota para processar mensagens
+const port = process.env.PORT || 8000
+
+
 app.post('/mensagem', async (req, res) => {
   const mensagemUsuario = req.body.mensagem;
 
