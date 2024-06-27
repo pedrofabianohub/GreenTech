@@ -6,6 +6,9 @@ app.use(cors());
 
 const port = process.env.PORT || 8000
 
+app.get('/', (req, res) => {
+    res.json('hello world')
+})
 
 app.post('/mensagem', async (req, res) => {
   const mensagemUsuario = req.body.mensagem;
