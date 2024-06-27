@@ -39,7 +39,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Middleware para lidar com requisições OPTIONS
-app.options('*', cors(corsOptions));
+app.options('/mensagem', cors(corsOptions));
 
 app.get('/', (req, res) => {
   res.json('hello world');
