@@ -30,7 +30,7 @@ const generationConfig = {
 };
 
 const corsOptions = {
-  origin: 'https://green-tech-c5hl90xov-pedrofabianohubs-projects.vercel.app/', // Substitua pelo URL do seu frontend
+  origin: 'https://inspiring-fox-cbc878.netlify.app/', // Substitua pelo URL do seu frontend
   optionsSuccessStatus: 200
 };
 
