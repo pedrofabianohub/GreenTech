@@ -29,6 +29,11 @@ const generationConfig = {
   responseMimeType: "application/json",
 };
 
+const corsOptions = {
+  origin: 'https://667daa565e0b3000092cf4e0--inspiring-fox-cbc878.netlify.app', // Substitua pelo URL do seu frontend
+  optionsSuccessStatus: 200
+};
+
 app.get('/', (req, res) => {
   res.json('hello world');
 });
