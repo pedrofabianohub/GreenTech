@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
   res.json('hello world');
 });
 
-app.post('/mensagem', async (req, res) => {
+app.post('/', async (req, res) => {
   const mensagemUsuario = req.body.mensagem;
   console.log('Mensagem recebida:', mensagemUsuario);
 
