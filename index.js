@@ -7,13 +7,12 @@ const {
 } = require("@google/generative-ai");
 
 const app = express();
-app.use(express.json());
-app.use(cors());
-
+app.use(express.json()); // Middleware para parsing do corpo da requisição
 
 const port = process.env.PORT || 8000;
 
-const apiKey = 'AIzaSyCUSwm5rHE-ut59qGlw437xYn6idrnxId0';
+// Coloque a sua chave de API aqui
+const apiKey = 'SUA_CHAVE_DE_API_AQUI';
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
@@ -29,7 +28,9 @@ const generationConfig = {
   responseMimeType: "application/json",
 };
 
+// Configurar CORS para permitir solicitações do seu frontend específico
 const corsOptions = {
+  origin: 'https://inspiring-fox-cbc878.netlify.app', // Substitua pelo URL do seu frontend
   optionsSuccessStatus: 200,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   preflightContinue: false,
