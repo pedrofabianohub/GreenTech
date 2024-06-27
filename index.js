@@ -7,12 +7,11 @@ const {
 } = require("@google/generative-ai");
 
 const app = express();
-app.use(express.json()); // Middleware para parsing do corpo da requisição
+app.use(express.json());
 
 const port = process.env.PORT || 8000;
 
-// Coloque a sua chave de API aqui
-const apiKey = 'SUA_CHAVE_DE_API_AQUI';
+const apiKey = 'AIzaSyCUSwm5rHE-ut59qGlw437xYn6idrnxId0';
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
@@ -28,7 +27,6 @@ const generationConfig = {
   responseMimeType: "application/json",
 };
 
-// Configurar CORS para aceitar qualquer requisição
 app.use(cors());
 
 app.get('/', (req, res) => {
