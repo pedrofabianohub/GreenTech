@@ -44,7 +44,7 @@ function displayMessage(message, sender) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-const port = 'https://assistentegreentech.netlify.app/.netlify/functions/backend/mensagem'; //ajuste o endereço caso seja necessário
+const apiBaseUrl = '';
 
 async function sendMessageToServer(message) {
   try {
