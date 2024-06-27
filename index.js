@@ -28,19 +28,8 @@ const generationConfig = {
   responseMimeType: "application/json",
 };
 
-// Configurar CORS para permitir solicitações do seu frontend específico
-const corsOptions = {
-  origin: 'https://inspiring-fox-cbc878.netlify.app', // Substitua pelo URL do seu frontend
-  optionsSuccessStatus: 200,
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  preflightContinue: false,
-  allowedHeaders: 'Content-Type'
-};
-
-app.use(cors(corsOptions));
-
-// Middleware para lidar com requisições OPTIONS
-app.options('/mensagem', cors(corsOptions));
+// Configurar CORS para aceitar qualquer requisição
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.json('hello world');
