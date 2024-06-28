@@ -22,11 +22,11 @@ const model = genAI.getGenerativeModel({
 });
 
 const generationConfig = {
-  temperature: 0.7,
+  temperature: 1,
   topP: 0.95,
   topK: 64,
   maxOutputTokens: 8192,
-  responseMimeType: "application/json",
+  responseMimeType: "text/plain",
 };
 
 app.get('/', (req, res) => {
