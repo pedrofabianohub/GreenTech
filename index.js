@@ -9,6 +9,8 @@ const {
 const app = express();
 app.use(express.json());
 
+app.use(cors());
+
 const port = process.env.PORT || 8000;
 
 const apiKey = 'AIzaSyCUSwm5rHE-ut59qGlw437xYn6idrnxId0';
@@ -26,8 +28,6 @@ const generationConfig = {
   maxOutputTokens: 8192,
   responseMimeType: "application/json",
 };
-
-app.use(cors());
 
 app.get('/', (req, res) => {
   res.json('hello world');
