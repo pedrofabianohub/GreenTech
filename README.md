@@ -19,6 +19,7 @@ GreenTech é um projeto focado em soluções tecnológicas para promover a suste
 ## Estrutura do Projeto
 
 GreenTech/
+
 ├── src/
 │   ├── index.js
 │   ├── components/
@@ -28,7 +29,6 @@ GreenTech/
 │   ├── styles.css
 ├── README.md
 ├── package.json
-```
 
 ## Como Executar o Projeto
 
